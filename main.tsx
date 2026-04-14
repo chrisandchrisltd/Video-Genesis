@@ -28,7 +28,8 @@ const onExemptPage = exempt.some(p => window.location.pathname.endsWith(p));
 
 if (!onExemptPage) {
   const premium = localStorage.getItem("premium");
-  if (!premium) {
+
+  if (premium !== "true") {
     window.location.href = "/upgrade";
   }
 }
